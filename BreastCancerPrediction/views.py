@@ -99,7 +99,7 @@ def predict(request):
 
 def result(request):
     # p = staticfiles_storage.path('BreastCancerPrediction/files/data.csv')
-    df = pd.read_csv(r'C:\Users\Sarthik Mehta\Desktop\FRT\BreastCancerPrediction\BreastCancerPrediction\static\BreastCancerPrediction\files\data.csv')
+    df = pd.read_csv(r'..\static\BreastCancerPrediction\files\data.csv')
     df.drop('id', axis=1, inplace=True)
     df.drop('Unnamed: 32', axis=1, inplace=True)
     df['diagnosis'] = df['diagnosis'].map({'M': 1, 'B': 0})
