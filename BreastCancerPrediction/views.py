@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.templatetags.static import static
+
 from django.contrib.staticfiles.storage import staticfiles_storage
 
-from django.templatetags.static import static
+
 from django.conf import settings
 
 
@@ -99,7 +101,7 @@ def predict(request):
 
 def result(request):
     # p = staticfiles_storage.path('BreastCancerPrediction/files/data.csv')
-    df = pd.read_csv(r'..\static\BreastCancerPrediction\files\data.csv')
+    df = pd.read_csv(static('/BreastCancerPrediction/files/data.csv'))
     df.drop('id', axis=1, inplace=True)
     df.drop('Unnamed: 32', axis=1, inplace=True)
     df['diagnosis'] = df['diagnosis'].map({'M': 1, 'B': 0})
