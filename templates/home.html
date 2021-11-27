@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%block head %}
+     <title>Home</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+    <style>
+        .mainBanner{
+
+           padding:3%;
+        }
+        .mainHeading{
+            color: #fff;
+            text-shadow: 0.2px 0.2px 0.1px #000;
+            font-family: Sans-serif;
+            font-size: 6vw;
+            font-weight: bold;
+            line-height: 7vw;
+             text-transform: uppercase;
+             margin: 10px 0 24px;
+
+        }
+        .panel{
+            text-align:right;
+            margin-top:5%;
+        }
+
+        .panelForm{
+            text-align:center;
+        }
+        .submitButton{
+            text-decoration: none;
+          border: 3px solid #e75480;
+          color: #e75480;
+          background-color:white;
+          padding: 1.5vw 3vw;
+          font-size: 1.5vw;
+
+          font-family: sans-serif;
+          letter-spacing: 4px;
+          transition: all 0.5s;
+          position: relative;
+        }
+        .submitButton:hover{
+            background-color:transparent;
+        }
+
+        .common{
+            margin-top:2.5%;
+
+        }
+
+        .mainBanner{
+           background-image:url("{% static 'BreastCancerPrediction/images/bcpg.jpg' %}");
+        background-repeat: no-repeat;
+         background-size: 100% 100%;
+        }
+
+    </style>
+{% endblock head %}
+
+
+{%block content %}
+
+     <div class="mainBanner jumbotron">
+            <div class="container">
+                <div class="row">
+                    <div class="col-4 poster">
+                    <img src="{% static 'BreastCancerPrediction/images/Fight Against Breast Cancer.gif' %}"  style="width:20vw;height:20vw;margin-top:90%;margin-left:10%;">
+                    </div>
+                    <div class=" col-8 panel">
+                        <h1 class="mainHeading">Welcome to <span style="color:#e75480">Breast Cancer</span> Prediction System</h1>
+                        <form action="predict" class="panelForm">
+                            <input class="submitButton" type="submit" value="Let's Get Started">
+                        </form>
+                    </div>
+                </div>
+
+
+        </div>
+        </div>
+
+        <div class="common container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h3>What is Breast Cancer?</h3>
+                    <p>Breast cancer is a disease in which cells in the breast grow out of control. There are different kinds of breast cancer. The kind of breast cancer depends on which cells in the breast turn into cancer.
+
+Breast cancer can begin in different parts of the breast. A breast is made up of three main parts: lobules, ducts, and connective tissue. The lobules are the glands that produce milk. The ducts are tubes that carry milk to the nipple. The connective tissue (which consists of fibrous and fatty tissue) surrounds and holds everything together. Most breast cancers begin in the ducts or lobules.</p>
+
+                </div>
+                <div class="col-md-4 col-s-12">
+                        <img src="{% static 'BreastCancerPrediction/images/bcs.gif' %}"  style="width:60%;height:80%;margin-left:20%;">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="common container">
+            <div class="row">
+                <div class="col-md-4 col-s-12">
+                        <img src="{% static 'BreastCancerPrediction/images/problemsfaced.jpg' %}"  style="max-height:90%;max-width:100%;">
+                </div>
+
+                <div class="col-md-8">
+                    <h3>Substantial Problem Faced</h3>
+                    <p>In 2020, there were 2.3 million women diagnosed with breast cancer and 685000 deaths globally due to it, people avoid stepping out of their homes and neglect the possible symptoms of breast cancer, causing failure in the detection of it at an early stage. Breast cancer is a deadly disease and late diagnosis can affect the health of patients adversely and can make the treatment even more complex. However early detection and diagnosis of breast cancer can help provide effective and necessary medical treatments. To start with the treatment it's imperative to detect the cancer possibility in its initial phase and to do so it is essential to create an easy-to-use technology to help people to detect the possibility of breast cancer on their own conveniently from their home.</p>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="common container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h3>Aim of our project</h3>
+                    <p>The core idea behind the project is the requirement of an app to predict the possibility of breast cancer which cannot be cured at later stages and hence it is very crucial to be detected at a premature stage. The project aims to create a reliable web application to detect the possibility of breast cancer at an early stage so that its treatment can get started as soon as possible. The web application is planned to be built with Django framework and use machine learning models such as Random Forest Classifier, at the back-end to detect the possibility of having breast cancer based on the various physical aspects such as radius, perimeter, texture, area, smoothness, etc., and then the web application will analyze and provide the predicted result that whether its malignant or benign. It can help all the people across the globe to check independently for themselves the possibility of having breast cancer which will help them to get aware about it on time and if they require to consult a doctor and get started with the treatment without long-overdue, therefore helping to reduce the deaths caused by breast cancer around the world.</p>
+
+                </div>
+                <div class="col-md-4 col-s-12">
+                        <img src="{% static 'BreastCancerPrediction/images/aim.jpg' %}"  style="max-height:90%;max-width:100%;">
+
+                </div>
+            </div>
+        </div>
+
+{% endblock content %}

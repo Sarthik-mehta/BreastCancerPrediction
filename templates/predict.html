@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+    <title>Prediction Page</title>
+    <link rel="stylesheet" href="{% static 'BreastCancerPrediction/css/main.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+        table, td{
+           margin-top:10px;
+           padding:5px;
+        }
+
+        .panel{
+            text-align:right;
+            margin-top:5%;
+        }
+        .panelForm{
+            text-align:center;
+        }
+
+
+        .introduction{
+            margin-top:5%;
+        }
+
+        .mainBanner{
+           background-image:url("{% static 'BreastCancerPrediction/images/bcpg.jpg' %}");
+        background-repeat: no-repeat;
+         background-size: 100% 100%;
+        }
+
+        .poster{
+            margin-top:27%;
+            padding-left:9%;
+        }
+        .symptoms{
+            color:white;
+            text-align:left;
+
+        }
+
+        .prediction{
+            margin-top:2%;
+            margin-bottom:5%;
+        }
+
+        #messages{
+			background-color: black;
+			color: #fff;
+			padding: 10px;
+			margin-top: 10px;
+			text-align:center;
+		}
+
+    </style>
+{% endblock head %}
+
+{% block content %}
+
+        <div class="mainBanner jumbotron">
+            <div class="container">
+                {% for message in messages %}
+                <p id="messages">{{message}}</p>
+                {% endfor %}
+                <div class="row">
+                    <div class="col-4">
+                        <div class="card">
+                              <div class="card-body">
+                                 <h1 class="display-4" style="font-size:40px;text-align:center;">Welcome {{request.user}}</h1>
+                                <div style="text-align:center;margin-bottom:20px;"> Not {{request.user}} ? <a href="{% url 'logout'%}">logout</a></div>
+                                <p>Your previous statistics were:</p>
+                                <div class="stats container">
+                                    <p>Radius Mean: {{userstats.0}}</p>
+                                    <p>Texture Mean: {{userstats.1}}</p>
+                                    <p>Perimeter Mean: {{userstats.2}}</p>
+                                    <p>Area Mean: {{userstats.3}}</p>
+                                    <p>Smoothness Mean: {{userstats.4}}</p>
+                                    <p>Compactness Mean: {{userstats.5}}</p>
+                                    <p>Concavity Mean: {{userstats.6}}</p>
+                                    <p>Concave Points Mean: {{userstats.7}}</p>
+                                    <p>Symmetry Mean: {{userstats.8}}</p>
+                                    <p>Fractal Dimension Mean: {{userstats.9}}</p>
+
+                                    <p style="color:grey;">Note: For updating the values please consider refilling the prediction form.</p>
+                                </div>
+                              </div>
+                        </div>
+                    </div>
+                    <div class="col-8">
+                       <div class="card">
+                           <div class="card-body">
+                                   <div align="center">
+                    <h4 class="display-4" style="font-size:25px;margin-top:10px;color:{{testcolor}}">{{result2}}</h4>
+                    <h3 class="display-4" style="font-size:25px;margin-top:5%;" >Please enter the following information:</h3>
+                    <form action="result">
+                        <table>
+                            <tr>
+                                <td align="right">radius mean:</td>
+                                <td align="left"><input type="text" name="n1" required placeholder=" range: 6.981-28.11"></td>
+                            </tr>
+                            <tr>
+                                <td align="right">texture mean:</td>
+                                <td align="left"><input type="text" name="n2" required placeholder=" range: 9.71-39.28"></td>
+                            </tr>
+                            <tr>
+                                <td align="right">perimeter mean:</td>
+                                <td align="left"><input type="text" name="n3" required placeholder=" range: 43.79-188.5"></td>
+                            </tr>
+                            <tr>
+                                <td align="right">area mean:</td>
+                                <td align="left"><input type="text" name="n4" required placeholder=" range: 143.5-2501"></td>
+                            </tr>
+                            <tr>
+                                <td align="right">smoothness mean:</td>
+                                <td align="left"><input type="text" name="n5" required placeholder=" range: 0.05263-0.1634"></td>
+                            </tr>
+                            <tr>
+                                <td align="right">compactness mean:</td>
+                                <td align="left"><input type="text" name="n6" required placeholder=" range: 0.01938-0.3454"></td>
+                            </tr>
+                            <tr>
+                                <td align="right">concavity mean:</td>
+                                <td align="left"><input type="text" name="n7" required placeholder=" range: 0-0.4268"></td>
+                            </tr>
+                            <tr>
+                                <td align="right">concave points mean:</td>
+                                <td align="left"><input type="text" name="n8" required placeholder=" range: 0-0.2012"></td>
+                            </tr>
+                            <tr>
+                                <td align="right">symmetry mean:</td>
+                                <td align="left"><input type="text" name="n9" required placeholder=" range: 0.106-0.304"></td>
+                            </tr>
+                            <tr>
+                                <td align="right">fractal dimension mean:</td>
+                                <td align="left"><input type="text" name="n10" required placeholder=" range: 0.04996-0.09744"></td>
+                            </tr>
+                        </table>
+                        <input type="submit" style="margin-top:20px;color:white;background-color:black;padding:7px;border-radius:25px;font-size:16px;border:1px solid white;width:100px;">
+                    </form>
+
+                    <h4 class="display-4" style="font-size:25px;margin-top:10px;">{{recommendation}}</h4>
+                </div>
+                           </div>
+                       </div>
+                    </div>
+                </div>
+
+
+        </div>
+        </div>
+
+        <div class="container" style="border:1px solid gray;margin-bottom:20px;">
+            <h4 class="Display-4" style="font-size:15px;color:grey;text-align:center;padding:5px;"> Disclaimer: This project is made exclusively for academic purposes and does not provide any guaranteed results or any kind of professional Opinion.</h4>
+        </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+{% endblock content %}
