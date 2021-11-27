@@ -127,9 +127,8 @@ DEFAULT_FILE_STORAGE = 'BreastCancerPrediction.custom_azure.AzureStaticStorage'
 STATICFILES_STORAGE = 'BreastCancerPrediction.custom_azure.AzureStaticStorage'
 
 STATIC_LOCATION = "static"
-MEDIA_LOCATION = "media"
+
 
 AZURE_ACCOUNT_NAME = "breastcancerprediction"
 AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
 STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
-MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
