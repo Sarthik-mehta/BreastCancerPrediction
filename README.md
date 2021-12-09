@@ -5,3 +5,10 @@ This easy-to-use web application uses Random Forest Classifier machine learning 
 
 click [here](https://breast-cancer-predictor.azurewebsites.net/) to view the working project deployed on Azure Cloud Platform.
 
+## Technologies Used
+1. The project uses Scikit-learn Random Forest Classifier machine learning algorithm to predict the possibility of breast cancer.
+2. It is built using Bootstrap, HTML, CSS and Javascript for the frontend and Django-framework for the backend.
+3. It is connected to Azure PostgreSQL Database Server in the backend.
+4. Azure Blob Storage is used for storing static files.
+5. The project is deployed on Azure App Service.
+
