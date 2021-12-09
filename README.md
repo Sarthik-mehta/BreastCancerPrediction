@@ -5,6 +5,9 @@ This easy-to-use web application uses Random Forest Classifier machine learning 
 
 click [here](https://breast-cancer-predictor.azurewebsites.net/) to view the working project deployed on Azure Cloud Platform.
 
+![image](https://user-images.githubusercontent.com/65113721/145431906-aaf7c783-3d33-4cc0-971e-f5420a61884f.png)
+
+
 ## Technologies Used
 1. The project uses Scikit-learn Random Forest Classifier machine learning algorithm to predict the possibility of breast cancer.
 2. It is built using Bootstrap, HTML, CSS and Javascript for the frontend and Django-framework for the backend.
