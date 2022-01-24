@@ -77,14 +77,13 @@ DATABASES = {
     'default': {
         #connecting with azure
         'ENGINE': 'sql_server.pyodbc',
-        'NAME': 'BreastCancerPredictionDatabase',
+        'NAME': 'bcpdb',
         'USER': 'sarthikmehta',
         'PASSWORD': 'Mydatabase@2022',
-        'HOST': 'breastcancerpredictiondatabase.database.windows.net',
+        'HOST': 'bcp1.database.windows.net',
         'PORT': '1433',
         'OPTIONS':{
              'driver': 'ODBC Driver 17 for SQL Server',
-             'isolation_level':'READ UNCOMMITTED'
         },
         #old school
         # 'ENGINE': 'django.db.backends.sqlite3',
