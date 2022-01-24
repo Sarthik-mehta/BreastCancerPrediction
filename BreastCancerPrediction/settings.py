@@ -76,14 +76,14 @@ WSGI_APPLICATION = 'BreastCancerPrediction.wsgi.application'
 DATABASES = {
     'default': {
         #connecting with azure
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'BreastCancerPredictiondb',
-        'USER': 'sarthik@breastcancerpredictiondb',
-        'PASSWORD': 'Qwertyuiop@123456789',
-        'HOST': 'breastcancerpredictiondb.postgres.database.azure.com',
-        'PORT': '5432',
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'BreastCancerPredictionDatabase',
+        'USER': 'sarthikmehta@breastcancerpredictiondatabase',
+        'PASSWORD': 'Mydatabase@2022',
+        'HOST': 'breastcancerpredictiondatabase.database.windows.net',
+        'PORT': '1433',
         'OPTIONS':{
-            'sslmode':'require'
+             'driver': 'ODBC Driver 17 for SQL Server',
         },
         #old school
         # 'ENGINE': 'django.db.backends.sqlite3',
