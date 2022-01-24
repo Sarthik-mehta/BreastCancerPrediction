@@ -78,8 +78,8 @@ DATABASES = {
         #connecting with azure
         'ENGINE': 'sql_server.pyodbc',
         'NAME': 'bcpdb',
-        'USER': 'sarthikmehta',
-        'PASSWORD': 'Mydatabase@2022',
+        'USER': 'sarthikmehta@bcp1',
+        'PASSWORD': 'Database@2022',
         'HOST': 'bcp1.database.windows.net',
         'PORT': '1433',
         'OPTIONS':{
