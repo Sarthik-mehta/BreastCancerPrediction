@@ -78,12 +78,13 @@ DATABASES = {
         #connecting with azure
         'ENGINE': 'sql_server.pyodbc',
         'NAME': 'BreastCancerPredictionDatabase',
-        'USER': 'sarthikmehta@breastcancerpredictiondatabase',
+        'USER': 'sarthikmehta',
         'PASSWORD': 'Mydatabase@2022',
         'HOST': 'breastcancerpredictiondatabase.database.windows.net',
         'PORT': '1433',
         'OPTIONS':{
-             'driver': 'ODBC Driver 13 for SQL Server',
+             'driver': 'ODBC Driver 17 for SQL Server',
+             'isolation_level':'READ UNCOMMITTED'
         },
         #old school
         # 'ENGINE': 'django.db.backends.sqlite3',

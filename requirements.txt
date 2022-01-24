@@ -4,6 +4,7 @@ scikit_learn==1.0.1
 django-storages[azure]
 psycopg2-binary
 pyodbc
-django-mssql-backend
 django-pyodbc-azure
+django-mssql-backend
+
 
