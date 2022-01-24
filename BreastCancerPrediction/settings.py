@@ -76,7 +76,7 @@ WSGI_APPLICATION = 'BreastCancerPrediction.wsgi.application'
 DATABASES = {
     'default': {
         #connecting with azure
-        'ENGINE': 'sql_server.pyodbc',
+        'ENGINE': 'mssql',
         'NAME': 'bcpdb',
         'USER': 'sarthikmehta@bcp1',
         'PASSWORD': 'Database@2022',
