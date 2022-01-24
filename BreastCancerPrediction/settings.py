@@ -85,7 +85,7 @@ DATABASES = {
         'OPTIONS':{
             'sslmode':'require'
         },
-        #old
+        #old school
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': BASE_DIR / 'db.sqlite3',
     }
