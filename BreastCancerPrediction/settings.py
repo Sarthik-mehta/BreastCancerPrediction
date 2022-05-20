@@ -78,8 +78,8 @@ DATABASES = {
         #connecting with azure
         'ENGINE': 'mssql',
         'NAME': 'bcpdb',
-        'USER': 'sarthikmehta@bcp1',
-        'PASSWORD': 'Database@2022',
+        'USER': 'username',
+        'PASSWORD': 'password',
         'HOST': 'bcp1.database.windows.net',
         'PORT': '1433',
         'OPTIONS':{
